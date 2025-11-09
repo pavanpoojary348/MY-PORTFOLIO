@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Pavan Poojary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Flask version of CSS path -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
@@ -57,14 +59,21 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
-    <div class="footer-socials">
-      <a href="#">GitHub</a>
-      <a href="#">LinkedIn</a>
-      <a href="#">Instagram</a>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+  <div class="footer-socials">
+  <a href="https://github.com/pavanpoojary348" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/pavan-poojary-588460342/" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://www.instagram.com/_poojary_pavan_/#" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+</div>
+
+</footer>
 
   <!-- Flask version of script path -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>

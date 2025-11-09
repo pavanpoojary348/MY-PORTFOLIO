@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | Pavan Poojary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <!-- Flask-friendly CSS path -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
@@ -36,21 +38,19 @@
 
 
       <div class="project-card">
-        <div class="card-content">
-          <h3>Spam Detection Project</h3>
-          <p>A Python-based ML app that detects spam messages using NLP.</p>
-          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="card-content">
-          <h3>React Portfolio</h3>
-          <p>My personal portfolio website made with love ❤️ using HTML, CSS, and JS.</p>
-          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
-        </div>
-      </div>
-
+    <div class="card-content">
+      <h3>Spam Detection Project</h3>
+      <p>A Python-based ML app that detects spam messages using NLP.</p>
+      <a href="https://github.com/pavanpoojary348/E-mail-Spam-Detection" class="btn small" target="_blank">🔗 View Project</a>
+    </div>
+  </div>
+        <div class="project-card">
+    <div class="card-content">
+      <h3>React Portfolio</h3>
+      <p>My personal portfolio website made with love ❤️ using HTML, CSS, and JS.</p>
+      <a href="https://github.com/pavanpoojary348/MY-PORTFOLIO" class="btn small" target="_blank">🔗 View Project</a>
+    </div>
+  </div>
       <div class="project-card">
         <div class="card-content">
           <h3>Bank Data ETL Project</h3>
@@ -79,14 +79,21 @@
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
-    <div class="footer-socials">
-      <a href="#" title="GitHub">GitHub</a>
-      <a href="#" title="LinkedIn">LinkedIn</a>
-      <a href="#" title="Instagram">Instagram</a>
-    </div>
-  </footer>
+    <footer class="footer">
+  <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+  <div class="footer-socials">
+  <a href="https://github.com/pavanpoojary348" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="https://www.linkedin.com/in/pavan-poojary-588460342/" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://www.instagram.com/_poojary_pavan_/#" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+</div>
+
+</footer>
 
   <!-- Load JS -->
   <script src="{{ url_for('static', filename='script.js') }}"></script>
