@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Pavan Poojary</title>
+  <!-- Flask version of CSS path -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Pavan Poojary</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+      <li><a href="{{ url_for('projects') }}">Projects</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <h2>👨‍💻 About Me</h2>
+    <div class="line"></div>
+
+    <div class="about-container">
+      <!-- Left: Profile Image -->
+      <div class="about-img">
+        <!-- Flask version of image path -->
+        <img src="{{ url_for('static', filename='Pavan.jpg') }}" alt="Pavan Poojary" />
+      </div>
+
+      <!-- Right: Text -->
+      <div class="about-text">
+        <p>
+          Hi! I'm <span class="highlight">Pavan Poojary</span> from 
+          <span class="highlight">Kinnigoli, near Mangalore</span>.
+          I'm passionate about <span class="highlight">web development</span> and 
+          love designing clean, interactive, and visually appealing websites.
+        </p>
+        <p>
+          I’m currently exploring <span class="highlight">React</span> and 
+          front-end design, improving my skills in 
+          <span class="highlight">HTML</span>, 
+          <span class="highlight">CSS</span>, 
+          <span class="highlight">JavaScript</span>, and 
+          <span class="highlight">Python</span>.
+        </p>
+        <p>
+          My goal is to build projects that not only look good 
+          but also provide smooth user experiences. 💻✨
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+    <div class="footer-socials">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Flask version of script path -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

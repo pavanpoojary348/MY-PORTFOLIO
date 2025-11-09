@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Pavan Poojary</title>
+  <!-- Load CSS from static folder -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Pavan Poojary</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('projects') }}">Projects</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for('contact') }}" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="contact-section">
+    <h2>📩 Contact Me</h2>
+    <div class="line"></div>
+
+    <p class="contact-intro">
+      Let’s connect! Whether it’s collaboration, freelancing, or just to say hi — 
+      I’d love to hear from you. 💬
+    </p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form" action="{{ url_for('contact') }}" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Type your message..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn submit-btn">Send Message 🚀</button>
+      </form>
+
+      <!-- Social Links -->
+      <div class="contact-socials">
+        <h3>Or Connect With Me:</h3>
+        <div class="social-links">
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    {% if success_message %}
+      <p class="success-msg">{{ success_message }}</p>
+    {% endif %}
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+    <div class="footer-socials">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Load JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

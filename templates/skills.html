@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Pavan Poojary</title>
+  <!-- Flask-friendly CSS path -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Pavan Poojary</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('projects') }}">Projects</a></li>
+      <li><a href="{{ url_for('skills') }}" class="active">Skills</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="skills-section">
+    <h2>🧠 My Skills</h2>
+    <div class="line"></div>
+
+    <div class="skills-container">
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>HTML</span>
+          <span class="percent">95%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:95%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>CSS</span>
+          <span class="percent">90%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>JavaScript</span>
+          <span class="percent">80%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>React</span>
+          <span class="percent">75%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>Python</span>
+          <span class="percent">85%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span>Java</span>
+          <span class="percent">70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:70%"></div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+    <div class="footer-socials">
+      <a href="#" title="GitHub">GitHub</a>
+      <a href="#" title="LinkedIn">LinkedIn</a>
+      <a href="#" title="Instagram">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Flask-friendly JS path -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

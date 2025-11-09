@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Pavan Poojary</title>
+  <!-- Flask-friendly path for CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Pavan Poojary</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('projects') }}">Projects</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO / HEADER SECTION ===== -->
+  <header>
+    <img src="{{ url_for('static', filename='Pavan.jpg') }}" class="profile-pic" alt="Pavan Poojary" />
+    <h1>Hello, I'm <span class="name">Pavan Poojary</span></h1>
+    <p class="subtitle"><span id="typed"></span></p>
+
+    <div class="buttons">
+      <a href="{{ url_for('projects') }}" class="btn">View Projects</a>
+      <a href="{{ url_for('contact') }}" class="btn outline">Hire Me</a>
+    </div>
+  </header>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+    <div class="footer-socials">
+      <a href="#" title="GitHub">GitHub</a>
+      <a href="#" title="LinkedIn">LinkedIn</a>
+      <a href="#" title="Instagram">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

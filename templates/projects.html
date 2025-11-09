@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Pavan Poojary</title>
+  <!-- Flask-friendly CSS path -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Pavan Poojary</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('projects') }}" class="active">Projects</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="projects-section">
+    <h2>🚀 My Projects</h2>
+    <div class="line"></div>
+
+    <div class="projects-grid">
+<div class="project-card">
+  <div class="card-content">
+    <h3>Quote Saver App</h3>
+    <p>A Flask web app to save and display motivational quotes.</p>
+    <a href="https://github.com/pavanpoojary348/flask-app" class="btn small" target="_blank">🔗 View Project</a>
+  </div>
+</div>
+
+
+      <div class="project-card">
+        <div class="card-content">
+          <h3>Spam Detection Project</h3>
+          <p>A Python-based ML app that detects spam messages using NLP.</p>
+          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <h3>React Portfolio</h3>
+          <p>My personal portfolio website made with love ❤️ using HTML, CSS, and JS.</p>
+          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <h3>Bank Data ETL Project</h3>
+          <p>A Python data pipeline that extracts, cleans, and loads global bank data.</p>
+          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <h3>Spam Detection Web App</h3>
+          <p>A simple front-end + Flask app to detect spam SMS or emails instantly.</p>
+          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-content">
+          <h3>Java GUI App</h3>
+          <p>An Object-Oriented GUI-based Java project demonstrating OOP principles.</p>
+          <a href="#" class="btn small" target="_blank">🔗 View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
+    <div class="footer-socials">
+      <a href="#" title="GitHub">GitHub</a>
+      <a href="#" title="LinkedIn">LinkedIn</a>
+      <a href="#" title="Instagram">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Load JS -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
