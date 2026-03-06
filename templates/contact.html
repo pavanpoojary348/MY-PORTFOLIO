@@ -98,82 +98,79 @@
 {% endblock %}
 
 {% block scripts %}
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-const form = document.getElementById('contactForm');
-const submitBtn = document.getElementById('submitBtn');
-const btnText = submitBtn.querySelector('.btn-text');
-const btnLoading = submitBtn.querySelector('.btn-loading');
+  // Initialize EmailJS
+  emailjs.init('7NWrqSOVj2yLaUgWW');
 
-// Field validation helpers
-function validateField(id, errorId, condition, msg) {
-  const el = document.getElementById(id);
-  const err = document.getElementById(errorId);
-  if (condition) {
-    el.classList.add('invalid');
-    err.textContent = msg;
-    return false;
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = submitBtn.querySelector('.btn-text');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+
+  // Field validation
+  function validateField(id, errorId, condition, msg) {
+    const el = document.getElementById(id);
+    const err = document.getElementById(errorId);
+    if (condition) {
+      el.classList.add('invalid');
+      err.textContent = msg;
+      return false;
+    }
+    el.classList.remove('invalid');
+    err.textContent = '';
+    return true;
   }
-  el.classList.remove('invalid');
-  err.textContent = '';
-  return true;
-}
 
-// Real-time validation
-['name','email','message'].forEach(id => {
-  document.getElementById(id).addEventListener('input', () => clearError(id));
-});
-
-function clearError(id) {
-  document.getElementById(id).classList.remove('invalid');
-  const err = document.getElementById(id + 'Error');
-  if (err) err.textContent = '';
-}
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-
-  // Validate
-  let valid = true;
-  valid &= validateField('name', 'nameError', name.length < 2, 'Please enter your name (min 2 chars).');
-  valid &= validateField('email', 'emailError', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'Please enter a valid email address.');
-  valid &= validateField('message', 'messageError', message.length < 10, 'Message too short (min 10 characters).');
-  if (!valid) return;
-
-  // Show loading state
-  submitBtn.disabled = true;
-  btnText.style.display = 'none';
-  btnLoading.style.display = 'inline-flex';
-  document.getElementById('formSuccess').style.display = 'none';
-  document.getElementById('formError').style.display = 'none';
-
-  try {
-    const res = await fetch('/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message })
+  // Real-time validation
+  ['name','email','message'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => {
+      document.getElementById(id).classList.remove('invalid');
+      document.getElementById(id + 'Error').textContent = '';
     });
+  });
 
-    const data = await res.json();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-    if (res.ok && data.status === 'success') {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate
+    let valid = true;
+    valid &= validateField('name',    'nameError',    name.length < 2,    'Please enter your name.');
+    valid &= validateField('email',   'emailError',   !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'Please enter a valid email.');
+    valid &= validateField('message', 'messageError', message.length < 10, 'Message too short (min 10 chars).');
+    if (!valid) return;
+
+    // Show loading
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline-flex';
+    document.getElementById('formSuccess').style.display = 'none';
+    document.getElementById('formError').style.display = 'none';
+
+    try {
+      await emailjs.send('service_4jvfl0g', 'template_hbl59ji', {
+        name: name,
+        email: email,
+        message: message,
+        time: new Date().toLocaleString()
+      });
+
       document.getElementById('formSuccess').style.display = 'flex';
       form.reset();
-    } else {
-      document.getElementById('formErrorMsg').textContent = data.message || 'Something went wrong.';
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      document.getElementById('formErrorMsg').textContent = 'Something went wrong. Please try again.';
       document.getElementById('formError').style.display = 'flex';
+    } finally {
+      submitBtn.disabled = false;
+      btnText.style.display = 'inline-flex';
+      btnLoading.style.display = 'none';
     }
-  } catch (err) {
-    document.getElementById('formErrorMsg').textContent = 'Network error. Please try again.';
-    document.getElementById('formError').style.display = 'flex';
-  } finally {
-    submitBtn.disabled = false;
-    btnText.style.display = 'inline-flex';
-    btnLoading.style.display = 'none';
-  }
-});
+  });
 </script>
 {% endblock %}
