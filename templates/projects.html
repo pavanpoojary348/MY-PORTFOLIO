@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block title %}Projects | Pavan Poojary{% endblock %}
+
+{% block content %}
+<section class="page-section projects-section">
+  <div class="section-header">
+    <span class="section-tag">// my_projects</span>
+    <h2>🚀 My Projects</h2>
+    <div class="line"></div>
+    <p class="section-sub">Things I've built — from ideas to deployed products.</p>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card" data-category="web">
+      <div class="card-top">
+        <div class="card-icon"><i class="fas fa-quote-left"></i></div>
+        <div class="card-links">
+          <a href="https://github.com/pavanpoojary348/flask-app" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Quote Saver App</h3>
+        <p class="card-problem"><span>Problem:</span> No simple way to save and revisit motivational quotes.</p>
+        <p class="card-solution"><span>Solution:</span> Built a Flask web app with a clean UI to add, view, and store quotes persistently.</p>
+        <div class="card-tags">
+          <span>Flask</span><span>Python</span><span>HTML/CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card featured" data-category="ml">
+      <div class="card-badge">Featured</div>
+      <div class="card-top">
+        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="card-links">
+          <a href="https://github.com/pavanpoojary348/E-mail-Spam-Detection" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Spam Detection System</h3>
+        <p class="card-problem"><span>Problem:</span> Spam emails clutter inboxes and pose phishing risks.</p>
+        <p class="card-solution"><span>Solution:</span> Built an NLP-powered ML classifier using Naive Bayes + Flask frontend to detect spam in real-time.</p>
+        <p class="card-result"><span>Result:</span> Achieved ~97% accuracy on test dataset with live web demo.</p>
+        <div class="card-tags">
+          <span>Python</span><span>NLP</span><span>Scikit-learn</span><span>Flask</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card" data-category="web">
+      <div class="card-top">
+        <div class="card-icon"><i class="fas fa-user-circle"></i></div>
+        <div class="card-links">
+          <a href="https://github.com/pavanpoojary348/MY-PORTFOLIO" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://my-portfolio-7rvj.onrender.com" target="_blank" rel="noopener" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Personal Portfolio</h3>
+        <p class="card-problem"><span>Problem:</span> Needed a professional online presence to showcase projects.</p>
+        <p class="card-solution"><span>Solution:</span> Designed and deployed a responsive Flask portfolio with contact form, animations, and live deployment on Render.</p>
+        <div class="card-tags">
+          <span>Flask</span><span>HTML/CSS</span><span>JS</span><span>Render</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card" data-category="data">
+      <div class="card-top">
+        <div class="card-icon"><i class="fas fa-database"></i></div>
+        <div class="card-links">
+          <a href="#" aria-label="Coming soon" class="disabled-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Bank Data ETL Pipeline</h3>
+        <p class="card-problem"><span>Problem:</span> Global bank data was scattered across web sources with no clean format.</p>
+        <p class="card-solution"><span>Solution:</span> Built a Python ETL pipeline that extracts, cleans, transforms, and loads world bank data into a structured format.</p>
+        <div class="card-tags">
+          <span>Python</span><span>Pandas</span><span>BeautifulSoup</span><span>ETL</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card" data-category="ml">
+      <div class="card-top">
+        <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+        <div class="card-links">
+          <a href="#" aria-label="Coming soon" class="disabled-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Spam Detection Web App</h3>
+        <p class="card-problem"><span>Problem:</span> ML models often stay as notebooks — not accessible to regular users.</p>
+        <p class="card-solution"><span>Solution:</span> Wrapped the spam classifier in a Flask web app with a clean front-end UI for instant SMS/email analysis.</p>
+        <div class="card-tags">
+          <span>Flask</span><span>ML</span><span>JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card" data-category="java">
+      <div class="card-top">
+        <div class="card-icon"><i class="fab fa-java"></i></div>
+        <div class="card-links">
+          <a href="#" aria-label="Coming soon" class="disabled-link"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="card-body">
+        <h3>Java OOP GUI App</h3>
+        <p class="card-problem"><span>Problem:</span> OOP concepts can be abstract without a visual application.</p>
+        <p class="card-solution"><span>Solution:</span> Built a GUI-based Java app as a team of 4, demonstrating inheritance, polymorphism, and encapsulation with a real interface.</p>
+        <div class="card-tags">
+          <span>Java</span><span>Swing/AWT</span><span>OOP</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="projects-cta">
+    <p>More projects on GitHub →</p>
+    <a href="https://github.com/pavanpoojary348" target="_blank" rel="noopener" class="btn btn-outline">
+      <i class="fab fa-github"></i> View All on GitHub
+    </a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}Skills | Pavan Poojary{% endblock %}
+
+{% block content %}
+<section class="page-section skills-section">
+  <div class="section-header">
+    <span class="section-tag">// tech_stack</span>
+    <h2>🧠 My Skills</h2>
+    <div class="line"></div>
+    <p class="section-sub">Languages, frameworks, and tools I work with.</p>
+  </div>
+
+  <!-- Skill Bars -->
+  <div class="skills-container">
+    <h3 class="skills-category-title">Languages & Frameworks</h3>
+    <div class="skill-bars">
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-html5"></i> HTML5</span>
+          <span class="percent">95%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:95%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-css3-alt"></i> CSS3</span>
+          <span class="percent">90%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-python"></i> Python</span>
+          <span class="percent">85%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-js-square"></i> JavaScript</span>
+          <span class="percent">80%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-react"></i> React</span>
+          <span class="percent">75%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fab fa-java"></i> Java</span>
+          <span class="percent">70%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:70%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-info">
+          <span><i class="fas fa-code"></i> C++</span>
+          <span class="percent">50%</span>
+        </div>
+        <div class="bar"><div class="fill" style="--width:50%"></div></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Tool Cards -->
+  <div class="tools-grid-section">
+    <h3 class="skills-category-title">Tools & Platforms</h3>
+    <div class="tools-grid">
+      <div class="tool-card"><i class="fab fa-github"></i><span>GitHub</span></div>
+      <div class="tool-card"><i class="fas fa-flask"></i><span>Flask</span></div>
+      <div class="tool-card"><i class="fas fa-brain"></i><span>Scikit-learn</span></div>
+      <div class="tool-card"><i class="fas fa-table"></i><span>Pandas</span></div>
+      <div class="tool-card"><i class="fas fa-server"></i><span>Render</span></div>
+      <div class="tool-card"><i class="fas fa-database"></i><span>SQLite</span></div>
+      <div class="tool-card"><i class="fas fa-terminal"></i><span>VS Code</span></div>
+      <div class="tool-card"><i class="fab fa-figma"></i><span>Figma</span></div>
+    </div>
+  </div>
+
+  <!-- Currently learning -->
+  <div class="learning-section">
+    <h3 class="skills-category-title">🌱 Currently Learning</h3>
+    <div class="learning-tags">
+      <span class="learn-tag"><i class="fas fa-spinner fa-spin"></i> DSA with C++</span>
+      <span class="learn-tag"><i class="fas fa-spinner fa-spin"></i> React Advanced Patterns</span>
+      <span class="learn-tag"><i class="fas fa-spinner fa-spin"></i> Machine Learning (Deep Learning)</span>
+      <span class="learn-tag"><i class="fas fa-spinner fa-spin"></i> Docker & Deployment</span>
+    </div>
+  </div>
+</section>
+{% endblock %}

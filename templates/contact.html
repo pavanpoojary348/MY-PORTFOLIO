@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}Contact | Pavan Poojary{% endblock %}
+
+{% block content %}
+<section class="page-section contact-section">
+  <div class="section-header">
+    <span class="section-tag">// get_in_touch</span>
+    <h2>📩 Contact Me</h2>
+    <div class="line"></div>
+    <p class="section-sub">
+      Let's connect! Open to collaboration, internships, or just a friendly chat. 💬
+    </p>
+  </div>
+
+  <div class="contact-container">
+    <!-- Contact Form -->
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" required minlength="2" autocomplete="name" />
+          <span class="field-error" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Hi Pavan, I'd love to collaborate on..." required minlength="10"></textarea>
+          <span class="field-error" id="messageError"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+          <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+          <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+        </button>
+
+        <!-- Status Messages -->
+        <div class="form-status success" id="formSuccess" style="display:none">
+          <i class="fas fa-check-circle"></i>
+          <span>Message sent! I'll get back to you soon. 🎉</span>
+        </div>
+        <div class="form-status error" id="formError" style="display:none">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span id="formErrorMsg">Something went wrong. Please try again.</span>
+        </div>
+      </form>
+    </div>
+
+    <!-- Social / Info Panel -->
+    <div class="contact-info">
+      <h3>Or find me here:</h3>
+      <div class="contact-info-items">
+        <a href="mailto:poojaryp379@gmail.com" class="contact-info-item">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div class="ci-text">
+            <span class="ci-label">Email</span>
+            <span class="ci-value">poojaryp379@gmail.com</span>
+          </div>
+        </a>
+        <a href="https://github.com/pavanpoojary348" target="_blank" rel="noopener" class="contact-info-item">
+          <div class="ci-icon"><i class="fab fa-github"></i></div>
+          <div class="ci-text">
+            <span class="ci-label">GitHub</span>
+            <span class="ci-value">pavanpoojary348</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/pavan-poojary-588460342/" target="_blank" rel="noopener" class="contact-info-item">
+          <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+          <div class="ci-text">
+            <span class="ci-label">LinkedIn</span>
+            <span class="ci-value">pavan-poojary</span>
+          </div>
+        </a>
+        <a href="https://www.instagram.com/_poojary_pavan_/" target="_blank" rel="noopener" class="contact-info-item">
+          <div class="ci-icon"><i class="fab fa-instagram"></i></div>
+          <div class="ci-text">
+            <span class="ci-label">Instagram</span>
+            <span class="ci-value">_poojary_pavan_</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="availability-card">
+        <div class="avail-dot"></div>
+        <div>
+          <strong>Currently available</strong>
+          <p>Open to internships & collaborations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const form = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const btnText = submitBtn.querySelector('.btn-text');
+const btnLoading = submitBtn.querySelector('.btn-loading');
+
+// Field validation helpers
+function validateField(id, errorId, condition, msg) {
+  const el = document.getElementById(id);
+  const err = document.getElementById(errorId);
+  if (condition) {
+    el.classList.add('invalid');
+    err.textContent = msg;
+    return false;
+  }
+  el.classList.remove('invalid');
+  err.textContent = '';
+  return true;
+}
+
+// Real-time validation
+['name','email','message'].forEach(id => {
+  document.getElementById(id).addEventListener('input', () => clearError(id));
+});
+
+function clearError(id) {
+  document.getElementById(id).classList.remove('invalid');
+  const err = document.getElementById(id + 'Error');
+  if (err) err.textContent = '';
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  // Validate
+  let valid = true;
+  valid &= validateField('name', 'nameError', name.length < 2, 'Please enter your name (min 2 chars).');
+  valid &= validateField('email', 'emailError', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email), 'Please enter a valid email address.');
+  valid &= validateField('message', 'messageError', message.length < 10, 'Message too short (min 10 characters).');
+  if (!valid) return;
+
+  // Show loading state
+  submitBtn.disabled = true;
+  btnText.style.display = 'none';
+  btnLoading.style.display = 'inline-flex';
+  document.getElementById('formSuccess').style.display = 'none';
+  document.getElementById('formError').style.display = 'none';
+
+  try {
+    const res = await fetch('/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const data = await res.json();
+
+    if (res.ok && data.status === 'success') {
+      document.getElementById('formSuccess').style.display = 'flex';
+      form.reset();
+    } else {
+      document.getElementById('formErrorMsg').textContent = data.message || 'Something went wrong.';
+      document.getElementById('formError').style.display = 'flex';
+    }
+  } catch (err) {
+    document.getElementById('formErrorMsg').textContent = 'Network error. Please try again.';
+    document.getElementById('formError').style.display = 'flex';
+  } finally {
+    submitBtn.disabled = false;
+    btnText.style.display = 'inline-flex';
+    btnLoading.style.display = 'none';
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% block title %}Certificates | Pavan Poojary{% endblock %}
+
+{% block content %}
+<section class="page-section certs-section">
+  <div class="section-header">
+    <span class="section-tag">// certifications</span>
+    <h2>🏆 My Certificates</h2>
+    <div class="line"></div>
+    <p class="section-sub">Courses completed and credentials earned.</p>
+  </div>
+
+  <!-- Filter Buttons -->
+  <div class="cert-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="python">Python</button>
+    <button class="filter-btn" data-filter="web">Web Dev</button>
+    <button class="filter-btn" data-filter="ml">ML / Data</button>
+    <button class="filter-btn" data-filter="other">Other</button>
+  </div>
+
+  <div class="certs-grid" id="certsGrid">
+
+    <!-- Certificate cards — add your own images/links -->
+
+    <div class="cert-card" data-category="python">
+      <div class="cert-org-badge ibm">IBM</div>
+      <div class="cert-body">
+        <h3>Python for Data Science, AI & Development</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> IBM / Coursera</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+        <div class="cert-skills">
+          <span>Python</span><span>Pandas</span><span>Jupyter</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="Python for Data Science, AI & Development"
+          data-org="IBM / Coursera"
+          data-date="2024"
+          data-skills="Python, Pandas, Numpy, Jupyter Notebooks"
+          data-desc="Covered Python fundamentals, data structures, working with files, APIs, pandas data frames, and using Python for AI & data science tasks."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+    <div class="cert-card" data-category="ml">
+      <div class="cert-org-badge coursera">Coursera</div>
+      <div class="cert-body">
+        <h3>Machine Learning Specialization</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> DeepLearning.AI / Coursera</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+        <div class="cert-skills">
+          <span>ML</span><span>Regression</span><span>Classification</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="Machine Learning Specialization"
+          data-org="DeepLearning.AI / Coursera"
+          data-date="2024"
+          data-skills="Supervised Learning, Regression, Classification, Neural Networks"
+          data-desc="Learned supervised and unsupervised learning, including linear regression, logistic regression, decision trees, and neural network basics."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+    <div class="cert-card" data-category="web">
+      <div class="cert-org-badge udemy">Udemy</div>
+      <div class="cert-body">
+        <h3>The Web Developer Bootcamp</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> Udemy</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+        <div class="cert-skills">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="The Web Developer Bootcamp"
+          data-org="Udemy"
+          data-date="2024"
+          data-skills="HTML5, CSS3, JavaScript, Bootstrap, Node.js, MongoDB"
+          data-desc="Comprehensive full-stack web development course covering frontend and backend technologies, RESTful APIs, authentication, and database management."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+    <div class="cert-card" data-category="ml">
+      <div class="cert-org-badge ibm">IBM</div>
+      <div class="cert-body">
+        <h3>Data Science Methodology</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> IBM / Coursera</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2024</p>
+        <div class="cert-skills">
+          <span>Data Science</span><span>ETL</span><span>Analytics</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="Data Science Methodology"
+          data-org="IBM / Coursera"
+          data-date="2024"
+          data-skills="Data Science Workflow, Problem Framing, Data Collection, Analysis"
+          data-desc="Focused on the end-to-end data science process from business understanding to deployment, including data collection, cleaning, modeling, and evaluation."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+    <div class="cert-card" data-category="python">
+      <div class="cert-org-badge nptel">NPTEL</div>
+      <div class="cert-body">
+        <h3>Programming in Java</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> NPTEL / IIT</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</p>
+        <div class="cert-skills">
+          <span>Java</span><span>OOP</span><span>Data Structures</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="Programming in Java"
+          data-org="NPTEL / IIT"
+          data-date="2025"
+          data-skills="Java, OOP, Collections, Exception Handling, GUI"
+          data-desc="Covered core Java programming including OOP concepts, collections framework, file I/O, exception handling, and GUI development with Swing."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+    <div class="cert-card" data-category="other">
+      <div class="cert-org-badge github">GitHub</div>
+      <div class="cert-body">
+        <h3>GitHub Foundations</h3>
+        <p class="cert-org"><i class="fas fa-building"></i> GitHub</p>
+        <p class="cert-date"><i class="fas fa-calendar-alt"></i> 2025</p>
+        <div class="cert-skills">
+          <span>Git</span><span>GitHub</span><span>Version Control</span>
+        </div>
+      </div>
+      <div class="cert-footer">
+        <button class="btn btn-sm" onclick="openCertModal(this)"
+          data-title="GitHub Foundations"
+          data-org="GitHub"
+          data-date="2025"
+          data-skills="Git, Version Control, Branching, Pull Requests, Collaboration"
+          data-desc="Learned Git fundamentals, repository management, branching strategies, pull request workflows, and collaboration best practices on GitHub."
+          data-link="#">
+          <i class="fas fa-eye"></i> Quick View
+        </button>
+        <a href="#" target="_blank" class="btn btn-outline btn-sm">
+          <i class="fas fa-external-link-alt"></i> Verify
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Certificate Modal -->
+<div class="cert-modal-overlay" id="certModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="cert-modal">
+    <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+    <div class="modal-badge" id="modalBadge"><i class="fas fa-certificate"></i></div>
+    <h3 id="modalTitle">Certificate Title</h3>
+    <p class="modal-org" id="modalOrg"></p>
+    <p class="modal-date" id="modalDate"></p>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-skills" id="modalSkills"></div>
+    <div class="modal-actions">
+      <a href="#" id="modalVerifyLink" target="_blank" class="btn btn-primary btn-sm">
+        <i class="fas fa-external-link-alt"></i> Verify Certificate
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.cert-card').forEach(card => {
+      card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'flex' : 'none';
+    });
+  });
+});
+
+// Modal
+function openCertModal(btn) {
+  document.getElementById('modalTitle').textContent = btn.dataset.title;
+  document.getElementById('modalOrg').innerHTML = '<i class="fas fa-building"></i> ' + btn.dataset.org;
+  document.getElementById('modalDate').innerHTML = '<i class="fas fa-calendar-alt"></i> Issued: ' + btn.dataset.date;
+  document.getElementById('modalDesc').textContent = btn.dataset.desc;
+  document.getElementById('modalVerifyLink').href = btn.dataset.link;
+  const skillsEl = document.getElementById('modalSkills');
+  skillsEl.innerHTML = btn.dataset.skills.split(',').map(s => `<span>${s.trim()}</span>`).join('');
+  document.getElementById('certModalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('certModalOverlay').addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+function closeModal() {
+  document.getElementById('certModalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+</script>
+{% endblock %}

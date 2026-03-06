@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %}Home | Pavan Poojary{% endblock %}
+
+{% block content %}
+<header class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span>Available for opportunities</span>
+    </div>
+
+    <img src="{{ url_for('static', filename='Pavan.jpg') }}" class="profile-pic" alt="Pavan Poojary" loading="eager" />
+
+    <h1 class="hero-title">
+      Hello, I'm <span class="name-highlight">Pavan Poojary</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      <span class="typed-prefix">I'm a </span><span id="typed"></span>
+    </p>
+
+    <p class="hero-desc">
+      2nd-year ISE student at NMAMIT · Building projects that solve real problems 🚀
+    </p>
+
+    <div class="hero-buttons">
+      <a href="{{ url_for('projects') }}" class="btn btn-primary">
+        <i class="fas fa-rocket"></i> View My Work
+      </a>
+      <a href="{{ url_for('contact') }}" class="btn btn-outline">
+        <i class="fas fa-paper-plane"></i> Let's Connect
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">6+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">5+</span>
+        <span class="stat-label">Certs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">2nd</span>
+        <span class="stat-label">Year ISE</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Quick scroll indicator -->
+<div class="scroll-hint">
+  <span>Scroll to explore</span>
+  <i class="fas fa-chevron-down bounce"></i>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+<script>
+  new Typed('#typed', {
+    strings: [
+      'Web Developer.',
+      'Python Enthusiast.',
+      'ML Explorer.',
+      'Problem Solver.',
+      'NMAMIT Student.'
+    ],
+    typeSpeed: 60,
+    backSpeed: 35,
+    backDelay: 1500,
+    loop: true,
+    cursorChar: '|'
+  });
+</script>
+{% endblock %}

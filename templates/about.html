@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}About | Pavan Poojary{% endblock %}
+
+{% block content %}
+<section class="page-section about-section">
+  <div class="section-header">
+    <span class="section-tag">// about_me</span>python app.py
+    <h2>👨‍💻 About Me</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="about-container">
+    <!-- Image -->
+    <div class="about-img-wrap">
+      <div class="about-img-glow"></div>
+      <img src="{{ url_for('static', filename='Pavan.jpg') }}" alt="Pavan Poojary" loading="lazy" />
+      <div class="about-img-badge">
+        <i class="fas fa-code"></i> Open to work
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
+      <h3 class="about-greeting">Hi there! 👋</h3>
+      <p>
+        I'm <span class="highlight">Pavan Poojary</span> from 
+        <span class="highlight">Kinnigoli, near Mangalore</span> — a 2nd-year
+        <span class="highlight">Information Science & Engineering</span> student at NMAMIT.
+      </p>
+      <p>
+        I'm passionate about building things that live on the web. Whether it's 
+        designing clean interfaces or writing backend logic with Python & Flask, 
+        I love turning ideas into reality through code.
+      </p>
+      <p>
+        Currently exploring <span class="highlight">React</span>, deepening my 
+        <span class="highlight">Machine Learning</span> knowledge, and learning 
+        <span class="highlight">DSA with C++</span>. My goal? Build products that 
+        are not just functional, but genuinely delightful to use. 💻✨
+      </p>
+
+      <!-- Tags -->
+      <div class="about-tags">
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">Flask</span>
+        <span class="tag">React</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">Machine Learning</span>
+      </div>
+
+      <div class="about-actions">
+        <a href="{{ url_for('projects') }}" class="btn btn-primary">
+          <i class="fas fa-folder-open"></i> See My Projects
+        </a>
+        <a href="https://github.com/pavanpoojary348" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline-section">
+    <h3 class="timeline-title">My Journey</h3>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2023</span>
+          <h4>Started at NMAMIT</h4>
+          <p>Joined ISE department — discovered my passion for coding and web development.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2024</span>
+          <h4>First Real Projects</h4>
+          <p>Built the Bank Data ETL pipeline, explored ML with Spam Detection, launched Flask portfolio.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2025</span>
+          <h4>Expanding Skills</h4>
+          <p>Started DSA in C++, built Java GUI group project, deployed portfolio on Render.</p>
+        </div>
+      </div>
+      <div class="tl-item tl-future">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2026 →</span>
+          <h4>What's Next</h4>
+          <p>Internships, open source contributions, and building impactful full-stack products.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
