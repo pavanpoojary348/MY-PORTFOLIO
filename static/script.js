@@ -152,12 +152,32 @@ if (form) {
 
     const data = Object.fromEntries(new FormData(form));
     try {
-      const res = await fetch('/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
-      });
-      if (res.ok) {
+      let sent = false;
+      if (typeof emailjs !== 'undefined') {
+        try {
+          emailjs.init('7NWrqSOVj2yLaUgWW');
+          await emailjs.send('service_4jvfl0g', 'template_hbl59ji', {
+            name: data.name,
+            email: data.email,
+            message: data.message,
+            time: new Date().toLocaleString()
+          });
+          sent = true;
+        } catch (emailJsErr) {
+          console.warn('EmailJS attempt failed, falling back to backend:', emailJsErr);
+        }
+      }
+
+      if (!sent) {
+        const res = await fetch('/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(data).toString()
+        });
+        sent = res.ok;
+      }
+
+      if (sent) {
         popupMessage.textContent = '✅ Message sent! Pavan will get back to you soon.';
         if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         form.reset();
