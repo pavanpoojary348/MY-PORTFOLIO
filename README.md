@@ -87,7 +87,7 @@ This repository is pre-configured with `vercel.json` and `api/index.py` for auto
 
 ## 📬 Connect
 
-- **Portfolio**: [pavanpoojary.vercel.app](https://vercel.com) (or your custom domain)
+- **Portfolio**: [pavanpoojary.vercel.app](https://pavanpoojary.vercel.app)
 - **GitHub**: [github.com/pavanpoojary348](https://github.com/pavanpoojary348)
 - **LeetCode**: [leetcode.com/u/pavanlpoojary](https://leetcode.com/u/pavanlpoojary/)
 - **LinkedIn**: [linkedin.com/in/pavanlpoojary](https://www.linkedin.com/in/pavanlpoojary/)
