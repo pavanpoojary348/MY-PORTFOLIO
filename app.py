@@ -1,6 +1,6 @@
 import os
 import traceback
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from flask_mail import Mail, Message
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -10,6 +10,30 @@ app = Flask(
     static_folder=os.path.join(BASE_DIR, 'static'),
     template_folder=os.path.join(BASE_DIR, 'templates')
 )
+
+# ===== VERCEL SERVERLESS WSGI PATH REWRITE MIDDLEWARE =====
+class VercelPathMiddleware:
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        forwarded_uri = (
+            environ.get('HTTP_X_FORWARDED_URI') or
+            environ.get('HTTP_X_MATCHED_PATH') or
+            environ.get('HTTP_X_ORIGINAL_URI') or
+            environ.get('HTTP_X_REWRITE_URL')
+        )
+        if forwarded_uri:
+            path_only = forwarded_uri.split('?')[0]
+            if path_only.startswith('/api/index'):
+                path_only = path_only.replace('/api/index', '', 1) or '/'
+            environ['PATH_INFO'] = path_only
+        elif environ.get('PATH_INFO') == '/api/index':
+            environ['PATH_INFO'] = '/'
+
+        return self.wsgi_app(environ, start_response)
+
+app.wsgi_app = VercelPathMiddleware(app.wsgi_app)
 
 # ===== LOAD .ENV FILE IF PRESENT =====
 env_path = os.path.join(BASE_DIR, '.env')
@@ -38,6 +62,14 @@ mail = Mail(app)
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@app.route('/api/index')
+def api_index():
+    return home()
+
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    return send_from_directory(os.path.join(BASE_DIR, 'static'), filename)
 
 @app.route('/about')
 def about():
