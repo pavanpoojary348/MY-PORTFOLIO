@@ -1,5 +1,6 @@
 import os
 import traceback
+import urllib.parse
 from flask import Flask, render_template, request, send_from_directory
 from flask_mail import Mail, Message
 
@@ -17,28 +18,27 @@ class VercelPathMiddleware:
         self.wsgi_app = wsgi_app
 
     def __call__(self, environ, start_response):
-        if 'debug_env' in environ.get('QUERY_STRING', ''):
-            headers = [('Content-Type', 'text/plain')]
-            start_response('200 OK', headers)
-            debug_info = []
-            for k, v in sorted(environ.items()):
-                if isinstance(v, (str, int, float, bool)):
-                    debug_info.append(f"{k} = {v}")
-            return [("\n".join(debug_info)).encode('utf-8')]
+        qs = environ.get('QUERY_STRING', '')
+        if '__vercel_route__' in qs:
+            params = urllib.parse.parse_qs(qs, keep_blank_values=True)
+            routes = params.pop('__vercel_route__', ['/'])
+            target_route = routes[0] if routes else '/'
 
-        forwarded_uri = (
-            environ.get('HTTP_X_FORWARDED_URI') or
-            environ.get('HTTP_X_MATCHED_PATH') or
-            environ.get('HTTP_X_ORIGINAL_URI') or
-            environ.get('HTTP_X_REWRITE_URL')
-        )
-        if forwarded_uri:
-            path_only = forwarded_uri.split('?')[0]
-            if path_only.startswith('/api/index.py'):
-                path_only = path_only.replace('/api/index.py', '', 1) or '/'
-            elif path_only.startswith('/api/index'):
-                path_only = path_only.replace('/api/index', '', 1) or '/'
-            environ['PATH_INFO'] = path_only
+            while target_route.startswith('//'):
+                target_route = target_route[1:]
+            if not target_route.startswith('/'):
+                target_route = '/' + target_route
+            if len(target_route) > 1 and target_route.endswith('/'):
+                target_route = target_route.rstrip('/')
+
+            environ['PATH_INFO'] = target_route
+
+            # Reconstruct clean query string without __vercel_route__
+            pairs = []
+            for k, vs in params.items():
+                for v in vs:
+                    pairs.append((k, v))
+            environ['QUERY_STRING'] = urllib.parse.urlencode(pairs)
         elif environ.get('PATH_INFO') in ('/api/index', '/api/index.py'):
             environ['PATH_INFO'] = '/'
 
