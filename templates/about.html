@@ -3,79 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pavan Poojary - Information Science and Engineering student at NMAM Institute of Technology passionate about software development and machine learning." />
   <title>About | Pavan Poojary</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <meta property="og:title" content="About | Pavan Poojary" />
+  <meta property="og:description" content="Information Science and Engineering student at NMAM Institute of Technology passionate about software development and machine learning." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="{{ url_for('static', filename='Pavan.jpg', _external=True) }}" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Flask version of CSS path -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
-  <!-- ===== NAVBAR ===== -->
+  <!-- Custom Cursor + Trail -->
+  <canvas id="particles-canvas"></canvas>
   <nav class="navbar">
-    <div class="logo">Pavan Poojary</div>
-    <ul>
+    <a class="logo" href="{{ url_for('home') }}">Pavan Poojary</a>
+    <ul class="nav-links">
       <li><a href="{{ url_for('home') }}">Home</a></li>
       <li><a href="{{ url_for('about') }}" class="active">About</a></li>
       <li><a href="{{ url_for('projects') }}">Projects</a></li>
       <li><a href="{{ url_for('skills') }}">Skills</a></li>
       <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a href="{{ url_for('certificates') }}">Certificates</a></li>
     </ul>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button class="cmd-nav-btn" data-open-cmd title="Open Command Palette (Ctrl+K)">
+        <i class="fas fa-terminal"></i> <span>Ctrl+K</span>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </nav>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section id="about" class="about-section">
-    <h2>👨‍💻 About Me</h2>
-    <div class="line"></div>
+  <section id="about" class="about-section" style="padding-top: 140px;">
+    <div class="section-header fade-up">
+      <span class="section-tag">// who_am_i.py</span>
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="section-line"></div>
+    </div>
 
-    <div class="about-container">
-      <!-- Left: Profile Image -->
-      <div class="about-img">
-        <!-- Flask version of image path -->
+    <div class="about-grid fade-up">
+      <div class="about-img-wrap">
         <img src="{{ url_for('static', filename='Pavan.jpg') }}" alt="Pavan Poojary" />
+        <div class="about-badges">
+          <span class="badge">Python</span>
+          <span class="badge">C++</span>
+          <span class="badge">Java</span>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">React</span>
+          <span class="badge">Flask</span>
+          <span class="badge">Machine Learning</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Git &amp; GitHub</span>
+        </div>
       </div>
 
-      <!-- Right: Text -->
-      <div class="about-text">
+      <div class="about-info">
         <p>
-          Hi! I'm <span class="highlight">Pavan Poojary</span> from 
-          <span class="highlight">Kinnigoli, near Mangalore</span>.
-          I'm passionate about <span class="highlight">web development</span> and 
-          love designing clean, interactive, and visually appealing websites.
+          Hi! I'm <span class="highlight-gradient">Pavan Poojary</span>, an
+          <span class="highlight">Information Science and Engineering</span> student at
+          <span class="highlight">NMAM Institute of Technology</span>. I'm passionate about
+          <span class="highlight">software development</span>,
+          <span class="highlight">machine learning</span>, and building practical applications that solve real-world problems.
         </p>
         <p>
-          I’m currently exploring <span class="highlight">React</span> and 
-          front-end design, improving my skills in 
-          <span class="highlight">HTML</span>, 
-          <span class="highlight">CSS</span>, 
-          <span class="highlight">JavaScript</span>, and 
-          <span class="highlight">Python</span>.
+          I enjoy exploring technologies such as
+          <span class="highlight-cyan">Python</span>,
+          <span class="highlight-cyan">C++</span>,
+          <span class="highlight-cyan">Java</span>,
+          <span class="highlight-cyan">React</span>,
+          <span class="highlight-cyan">Flask</span>, and
+          <span class="highlight">machine learning</span>. I'm continuously improving my programming skills through hands-on projects, coding practice, and collaborative technical activities.
         </p>
         <p>
-          My goal is to build projects that not only look good 
-          but also provide smooth user experiences. 💻✨
+          My goal is to become a skilled <span class="highlight-gradient">software engineer</span> and build innovative, efficient, and user-friendly applications. &#128640;
         </p>
+
+        <div>
+          <p class="timeline-title">&#127979; Education</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>B.Tech in Information Science and Engineering</h4>
+              <p class="meta">// Expected Graduation: 2028 &bull; NMAM Institute of Technology (NMAMIT)</p>
+              <p>Currently pursuing a bachelor's degree in Information Science and Engineering, with an interest in software development, data structures and algorithms, machine learning, and artificial intelligence.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Pre-University Course (PCMB)</h4>
+              <p class="meta">// 2020 &mdash; 2022 &bull; Kinnigoli PU College</p>
+              <p>Completed pre-university education with Physics, Chemistry, Mathematics, and Biology.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="timeline-title">&#128188; Experience</p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h4>Web Development Projects</h4>
+              <p class="meta">// Personal Projects</p>
+              <p>Developed personal web projects using HTML, CSS, JavaScript, Python, and Flask. Explored interactive user interfaces, backend development, and machine learning integration.</p>
+            </div>
+            <div class="timeline-item">
+              <h4>Personal Projects &amp; GitHub</h4>
+              <p class="meta">// GitHub</p>
+              <p>Building and maintaining personal programming projects on GitHub to strengthen problem-solving, software development, and practical implementation skills.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-  <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
-  <div class="footer-socials">
-  <a href="https://github.com/pavanpoojary348" target="_blank">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-  <a href="https://www.linkedin.com/in/pavan-poojary-588460342/" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://www.instagram.com/_poojary_pavan_/#" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-</div>
-
-</footer>
-
-  <!-- Flask version of script path -->
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-logo">Pavan Poojary</span>
+      <div class="footer-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('projects') }}">Projects</a>
+        <a href="{{ url_for('skills') }}">Skills</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('certificates') }}">Certificates</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/pavanpoojary348" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/pavanlpoojary/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://leetcode.com/u/pavanlpoojary/" target="_blank" title="LeetCode"><svg class="leetcode-icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+        <a href="https://www.instagram.com/_poojary_pavan_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2025 <span>Pavan Poojary</span> &mdash; Built with &#10084;&#65039; and dedication.</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  
 </body>
 </html>

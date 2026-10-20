@@ -3,58 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pavan Poojary - Information Science & Engineering Student at NMAMIT | Software Development, Python, C++, React & ML Explorer." />
   <title>Home | Pavan Poojary</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <meta property="og:title" content="Pavan Poojary | Portfolio" />
+  <meta property="og:description" content="Information Science & Engineering Student at NMAMIT | Software Development, Python, C++, React & ML." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ url_for('static', filename='Pavan.jpg', _external=True) }}" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Flask-friendly path for CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
-
 <body>
-  <!-- ===== NAVBAR ===== -->
+  <!-- Custom Cursor + Trail -->
+  <canvas id="particles-canvas"></canvas>
   <nav class="navbar">
-    <div class="logo">Pavan Poojary</div>
-    <ul>
+    <a class="logo" href="{{ url_for('home') }}">Pavan Poojary</a>
+    <ul class="nav-links">
       <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
       <li><a href="{{ url_for('about') }}">About</a></li>
       <li><a href="{{ url_for('projects') }}">Projects</a></li>
       <li><a href="{{ url_for('skills') }}">Skills</a></li>
       <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      <li><a href="{{ url_for('certificates') }}">Certificates</a></li>
     </ul>
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <button class="cmd-nav-btn" data-open-cmd title="Open Command Palette (Ctrl+K)">
+        <i class="fas fa-terminal"></i> <span>Ctrl+K</span>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </nav>
 
-  <!-- ===== HERO / HEADER SECTION ===== -->
-  <header>
-    <img src="{{ url_for('static', filename='Pavan.jpg') }}" class="profile-pic" alt="Pavan Poojary" />
-    <h1>Hello, I'm <span class="name">Pavan Poojary</span></h1>
-    <p class="subtitle"><span id="typed"></span></p>
-
-    <div class="buttons">
-      <a href="{{ url_for('projects') }}" class="btn">View Projects</a>
-      <a href="{{ url_for('contact') }}" class="btn outline">Hire Me</a>
+  <header class="hero">
+    <div class="hero-content">
+      <img src="{{ url_for('static', filename='Pavan.jpg') }}" class="hero-avatar" alt="Pavan Poojary" />
+      <p class="hero-greeting">// hello, world &mdash; I'm</p>
+      <h1>I'm <span class="name-gradient">Pavan Poojary</span></h1>
+      <p class="hero-subtitle">A passionate <span id="typed"></span></p>
+      <p class="hero-desc">Building modern, clean &amp; interactive web experiences from Mangalore, India. 🚀</p>
+      <div class="hero-buttons">
+        <a href="{{ url_for('projects') }}" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+        <a href="{{ url_for('contact') }}" class="btn btn-outline"><i class="fas fa-envelope"></i> Hire Me</a>
+        <a href="{{ url_for('certificates') }}" class="btn btn-outline"><i class="fas fa-download"></i> Resume</a>
+      </div>
+      <div class="scroll-indicator">
+        <span>scroll down</span>
+        <div class="arrow"></div>
+      </div>
     </div>
   </header>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== AT A GLANCE HIGHLIGHTS ===== -->
+  <section class="highlights-section">
+    <div class="section-header fade-up">
+      <span class="section-tag">// overview.json</span>
+      <h2 class="section-title">At a <span>Glance</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="highlights-grid fade-up">
+      <!-- 1. Engineering Student -->
+      <div class="highlight-card">
+        <span class="h-icon">&#127891;</span>
+        <h3>Engineering Student</h3>
+        <span class="h-meta">// NMAMIT &bull; B.Tech ISE</span>
+        <p>Pursuing Information Science and Engineering with an interest in software engineering, algorithms, and artificial intelligence (Expected 2028).</p>
+      </div>
+
+      <!-- 2. Core Tech Stack -->
+      <div class="highlight-card">
+        <span class="h-icon">&#128187;</span>
+        <h3>Core Tech Stack</h3>
+        <span class="h-meta">// Python &bull; C++ &bull; Java &bull; React &bull; Flask</span>
+        <p>Building responsive web applications, interactive front-ends, machine learning models, and efficient backend services.</p>
+      </div>
+
+      <!-- 3. Hands-on Projects -->
+      <div class="highlight-card">
+        <span class="h-icon">&#128640;</span>
+        <h3>Hands-on Projects</h3>
+        <span class="h-meta">// 6+ Practical Builds</span>
+        <p>From full-stack web applications to NLP spam detection and automated ETL pipelines, learning through building practical tools.</p>
+      </div>
+
+      <!-- 4. Open for Opportunities -->
+      <div class="highlight-card">
+        <span class="h-icon">&#129309;</span>
+        <h3>Open to Opportunities</h3>
+        <span class="h-meta">// Internships &bull; Collaborations</span>
+        <p>Eager to contribute to forward-thinking engineering teams, learn industry standards, and collaborate on software projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CODING & OPEN SOURCE PROFILES ===== -->
+  <section class="github-section">
+    <div class="section-header fade-up">
+      <span class="section-tag">// dev_profiles.json</span>
+      <h2 class="section-title">Coding <span>Profiles</span> &amp; Activity</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="github-card fade-up">
+      <div class="github-header-info">
+        <div style="display: flex; gap: 10px; align-items: center; font-size: 2rem; color: var(--cyan);">
+          <i class="fab fa-github"></i>
+          <span style="font-size: 1.2rem; color: var(--text-muted);">&bull;</span>
+          <svg class="leetcode-icon-svg" viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </div>
+        <div class="github-header-text">
+          <h3>GitHub &bull; LeetCode</h3>
+          <p>// Public Repositories &bull; Algorithmic Problem Solving &bull; Continuous Learning</p>
+        </div>
+      </div>
+
+      <div class="github-stats-row">
+        <div class="github-stat-box">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Featured Projects</span>
+        </div>
+        <div class="github-stat-box">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Languages Practiced</span>
+        </div>
+        <div class="github-stat-box">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Hands-On Code</span>
+        </div>
+        <div class="github-stat-box">
+          <span class="stat-num">Active</span>
+          <span class="stat-label">LeetCode Problem Solving</span>
+        </div>
+      </div>
+
+      <p style="color: var(--text-muted); font-size: 0.9rem; max-width: 640px; margin: 0; line-height: 1.6;">
+        Explore open-source repositories and software experiments on GitHub, and view data structures and algorithm practice on LeetCode.
+      </p>
+
+      <div class="dsa-focus-badges" style="margin-top: 4px; margin-bottom: 6px;">
+        <span class="dsa-tag">Arrays &amp; Hashing</span>
+        <span class="dsa-tag">Two Pointers</span>
+        <span class="dsa-tag">Binary Search</span>
+        <span class="dsa-tag">Trees &amp; Graphs</span>
+        <span class="dsa-tag">Dynamic Programming</span>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <a href="https://github.com/pavanpoojary348" target="_blank" class="btn btn-outline">
+          <i class="fab fa-github"></i> GitHub Profile &rarr;
+        </a>
+        <a href="https://leetcode.com/u/pavanlpoojary/" target="_blank" class="btn btn-outline">
+          <svg class="leetcode-icon-svg" viewBox="0 0 24 24" width="16" height="16"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg> LeetCode Profile &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-  <p>© 2025 <span>Pavan Poojary</span> — Built with ❤️ and dedication.</p>
-  <div class="footer-socials">
-  <a href="https://github.com/pavanpoojary348" target="_blank">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-  <a href="https://www.linkedin.com/in/pavan-poojary-588460342/" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://www.instagram.com/_poojary_pavan_/#" target="_blank">
-    <i class="fab fa-instagram"></i> Instagram
-  </a>
-</div>
-
-</footer>
-
-
-  <!-- ===== SCRIPTS ===== -->
+    <div class="footer-content">
+      <span class="footer-logo">Pavan Poojary</span>
+      <div class="footer-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('projects') }}">Projects</a>
+        <a href="{{ url_for('skills') }}">Skills</a>
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('certificates') }}">Certificates</a>
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/pavanpoojary348" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/pavanlpoojary/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://leetcode.com/u/pavanlpoojary/" target="_blank" title="LeetCode"><svg class="leetcode-icon-svg" viewBox="0 0 24 24" width="18" height="18"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg></a>
+        <a href="https://www.instagram.com/_poojary_pavan_/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2025 <span>Pavan Poojary</span> &mdash; Built with &#10084;&#65039; and dedication.</p>
+    </div>
+  </footer>
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
+  
 </body>
 </html>
