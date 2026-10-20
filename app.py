@@ -25,10 +25,12 @@ class VercelPathMiddleware:
         )
         if forwarded_uri:
             path_only = forwarded_uri.split('?')[0]
-            if path_only.startswith('/api/index'):
+            if path_only.startswith('/api/index.py'):
+                path_only = path_only.replace('/api/index.py', '', 1) or '/'
+            elif path_only.startswith('/api/index'):
                 path_only = path_only.replace('/api/index', '', 1) or '/'
             environ['PATH_INFO'] = path_only
-        elif environ.get('PATH_INFO') == '/api/index':
+        elif environ.get('PATH_INFO') in ('/api/index', '/api/index.py'):
             environ['PATH_INFO'] = '/'
 
         return self.wsgi_app(environ, start_response)
@@ -64,6 +66,7 @@ def home():
     return render_template('index.html')
 
 @app.route('/api/index')
+@app.route('/api/index.py')
 def api_index():
     return home()
 
