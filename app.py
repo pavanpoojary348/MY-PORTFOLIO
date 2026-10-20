@@ -17,6 +17,15 @@ class VercelPathMiddleware:
         self.wsgi_app = wsgi_app
 
     def __call__(self, environ, start_response):
+        if 'debug_env' in environ.get('QUERY_STRING', ''):
+            headers = [('Content-Type', 'text/plain')]
+            start_response('200 OK', headers)
+            debug_info = []
+            for k, v in sorted(environ.items()):
+                if isinstance(v, (str, int, float, bool)):
+                    debug_info.append(f"{k} = {v}")
+            return [("\n".join(debug_info)).encode('utf-8')]
+
         forwarded_uri = (
             environ.get('HTTP_X_FORWARDED_URI') or
             environ.get('HTTP_X_MATCHED_PATH') or
