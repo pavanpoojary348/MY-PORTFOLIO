@@ -1,63 +1,166 @@
 %PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
+<<
+/F1 2 0 R /F2 3 0 R /F3 7 0 R /F4 9 0 R
+>>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
 endobj
 4 0 obj
-<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+<<
+/A <<
+/S /URI /Type /Action /URI (mailto:poojaryp379@gmail.com)
+>> /Border [ 0 0 0 ] /Rect [ 235.9018 764.274 324.4938 773.874 ] /Subtype /Link /Type /Annot
+>>
 endobj
 5 0 obj
-<< /Length 600 >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/pavanpoojary348)
+>> /Border [ 0 0 0 ] /Rect [ 331.0218 764.274 433.7418 773.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://linkedin.com/in/pavan-poojary-588460342)
+>> /Border [ 0 0 0 ] /Rect [ 440.2698 764.274 546.0858 773.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /ZapfDingbats /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/pavanpoojary348/E-mail-Spam-Detection)
+>> /Border [ 0 0 0 ] /Rect [ 513.5479 492.874 546.7559 502.474 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/pavanpoojary348/Hostel-allocation-management-system)
+>> /Border [ 0 0 0 ] /Rect [ 513.5479 413.874 546.7559 423.474 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/pavanpoojary348/FLASK-PROJECT)
+>> /Border [ 0 0 0 ] /Rect [ 513.5479 346.874 546.7559 356.474 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.coursera.org/account/accomplishments/verify/X011OCAV2SI6)
+>> /Border [ 0 0 0 ] /Rect [ 508.2039 266.274 546.7559 275.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.coursera.org/account/accomplishments/verify/)
+>> /Border [ 0 0 0 ] /Rect [ 508.2039 251.274 546.7559 260.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.coursera.org/account/accomplishments/verify/9ODBRIR4FKOR)
+>> /Border [ 0 0 0 ] /Rect [ 505.5319 236.274 546.7559 245.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.coursera.org/account/accomplishments/verify/7HRV9COG2D3Y)
+>> /Border [ 0 0 0 ] /Rect [ 505.5319 221.274 546.7559 230.874 ] /Subtype /Link /Type /Annot
+>>
+endobj
+16 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 8 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R ] /Contents 20 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 19 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+17 0 obj
+<<
+/PageMode /UseNone /Pages 19 0 R /Type /Catalog
+>>
+endobj
+18 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20260430050026+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260430050026+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (\(anonymous\)) /Trapped /False
+>>
+endobj
+19 0 obj
+<<
+/Count 1 /Kids [ 16 0 R ] /Type /Pages
+>>
+endobj
+20 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2752
+>>
 stream
-BT
-/F1 22 Tf
-50 740 Td
-(PAVAN POOJARY) Tj
-/F1 12 Tf
-0 -26 Td
-(Information Science & Engineering Student | NMAM Institute of Technology) Tj
-0 -18 Td
-(Email: poojaryp379@gmail.com | Kinnigoli, Mangalore, India) Tj
-0 -18 Td
-(GitHub: github.com/pavanpoojary348 | LinkedIn: linkedin.com/in/pavanlpoojary) Tj
-0 -30 Td
-(EDUCATION) Tj
-0 -18 Td
-(B.Tech in Information Science and Engineering - NMAMIT [Expected 2028]) Tj
-0 -16 Td
-(Pre-University Course PCMB - Kinnigoli PU College [2020 - 2022]) Tj
-0 -30 Td
-(TECHNICAL SKILLS) Tj
-0 -18 Td
-(Languages: Python, C++, Java, JavaScript, SQL, HTML5, CSS3) Tj
-0 -16 Td
-(Frameworks & AI: Flask, React, Machine Learning, Scikit-learn, LangGraph) Tj
-0 -30 Td
-(PROJECTS) Tj
-0 -18 Td
-(ChainSentinel - Predictive Supply-Chain Resilience on IBM Z [IBM Z Datathon 2026]) Tj
-0 -16 Td
-(Cyberpunk Flask Portfolio - Full-Stack Web Application with Particle Effects) Tj
-0 -16 Td
-(Email Spam Detection - Machine Learning & NLP Classifier) Tj
-ET
-endstream
+Gb!l!>>sRl&q9"FoZPq1S4PiW?fl&)'::H[YU"1&X*@J]O_CsNY:[YhC4H.qagjBmMd\s>e8>;DM/B4Vp"*Pp.lKZ5+%*_r0u3;j5+NU"QnZ/X_q&W@p7O3(qW#Ya?YTD+@g$ZLT''e$BB*iR<\njqd"'ZYY?QPag#NEo1mYK+GVRKOJuN?9>rfXX=ISF;o)*G8NN;biqZ<oQ0@/D)^OLdmG8U;q>3cuu8\a617^K1M=e!aLk0!$JgFR'.k2IBP8amb&PO%1#@l521d!^;N4l$E0F%WOe"<-0"P->7R=;1NVR?35;ZjGV\Q4Q>'#lFiJ!s;fO2(dSW$lqQ/a>D`CIFADFPfmWiApLQHQ"-\]Ij`o#[CkGL8PE6^Kfh!Vg0mRDOXEgrMif"I;bA*&17nkI436n'9-3;a-#*LIP]O4oP:R`S=-n5g594sW5:s'*_lZs&F1(-]L`"3#jLQXch7,R2n!jfu\"/5@3t/G8c!4$1_@p6rI\_68nMT42*#$pV^np[N\3;uHe-Ie]JZkK_"T0X!_7&=Y^oRr_)NO-qLs*%*?/dUbYa;ll"Yf$()R)CAm#_Q7"u@.+As?iQ:%!9B'>\npK94J+Ud,Rb75A9XV&;oQOGdRA'*1M:7DI[I%\&QC4NCZF/0H0D#T+:-)U"%A,%q[qM7N]m)C+u\j,?.LA?hYaS4A:'1"Teul%?X.V^]q[OYFUb%Y=dSdqAs]",iln#K;K+Ve?\7d-:c&BYsf5#enYU)Y#Z(fpZZe00%c##S*%q'"+<U(6'K^paDkV^,4kaas%09:BX;t?K=*',i_\K*0LDTSDT5PP#3'_Zd;D#cNs0i_I]4_]3`IQ5>'JOQ^a34Y^:Xm__B]^@!b,<>1RG5?(EQEW)TKAS';b+"TLBZYf[M'7"nbmn(-h,%7s3gE\<_-OHTM_L,>DI4Q;PBgbh^ThL/4Ye7c]&'6r&uBmNV'm%mNs>t`A)(d2qSoQH@EL1a.IHH:d_d+ruq1Nha[RcOSlq+HiT^ZpMQo'^]&n^8?;RDpu$(_Suq$Wn,D[8M.3ii^ZLFRD>#IR&I8hke-d"XdqamE[bUCHYnSMG_Q^<V^ifboc5Nc"o2L"ktr-fDQ'0Il,:Phn$MXTLOb%Y,8s@LcL%#)Ldn3V&Q90F2)U*">kF,U(h-)o?RbGKaeL$RY`IhRW*kn+$V[B*0YUB3X@O-U=OeR!])qS3pg@ZIGBKcP#(g*&Gfgd@.SZi4Wm(Z+?mVU7Uh5mi*d;GYJYf"0b+C^\>CMcg@lTKJWHckkkpi\1sa_BBghNI)@/KQ2aXT.%u3tn]+N0L#%[\ci4!#%HX2'/]s`DUH\\,$2ZEr`+sNhOCi[W86[I_7f4*6_gB!h;2k&)g`YiE!(gnr4GS>CjZN$.a9?&fh!Rl49_mJb4]4I[u)\?<in^X]I=/_\nR?`QoJVdDQ$QBM[,+T%/+UJ;mEF+E@QFRs(\L6V5TV>USWg-Z;Qa1q?Tp?1gV>YjXBqs83D^e66fZXQMZ:oFV0M"co'rmq#9U[i=M@K2VWuMtFjVWmW?r7^l3mo$C=;aR^Vk@&H0Xic>&TdWE/2u-m>FN/](Y`9HO0>ZOlt823/DMr%8bhe#R>09;AG@9oN#G!#A&W5%#\rBg<#]tSqTeRm36",e)]S,^i\X!R!X_asn.r`(^BZ2\BdDFI<AJ"V^nr?p'VZK]OV(X&/hFQ2fs62j]BPX5A%rXGZEq-7!L4AAAL!p_KLOQq'%c>3Cg5d$g2Po+\gtV>-4=%u\;1:*IjJ>49mF[r1sTZt9sDaW6=<8[e-<D\-;Y:h=:NEuNBYM]YXg([^t"tT/<I0A/1F.-()[Ek+HJ$igTk$F);M6(18gkl178'WI6VX.E=L!@KIrU?Z,rj<KA`a",j)M_I)08q](%f3-X8F[1a@id,X>!WVT?"ZX+ec$+PV8bjo"Sq]rsQ=mN:.[`90to,XGOq3\Zr[anQr.K3$pDP76lY9N@ojXj6Z^aRYmG;o\\YMH[Qt*1jA7Qhr`MhTKc,6L\)p)biu*A=U[g,>5blkaClujXO"JV^MrfYa&kCHq,WXN]>/#21e8[lMY8O\hb0I>SnVdR/dSno*Zq2c104X,oG_o"YuBpZ*q9!Q`JYu,$,#<CE+<t<TeFlP"^2%C*4D7k_5CbMhpM,dTUrI,ftGc:.ZQp6-sA):#2)$OD2\gGo`94]2S,Kg\fge:A'9T+0rRhq*.s=/H).*4LLc\*O!9ej7!A(+^qChBk:Q;-'g`d.iB]1(hnn^S5>nPZU_(tE]0e^nms2KW]PL$g-ir2_2O^M15]0h`RBEHd8u+re_]LTkQYK3@9b<'$B#mH=K]"<<ifr=\4."%=JZ:"(32@i>':fGUXSicdJ:\nj[nW]fKJVf45MhS@X:?%CS?B)R&6pfL4=pL=SoQFl?dXph915'`[NR(E@J)3+89;(U7'/t9[$i2748I,j*ZG6r<Z5DJ_+KqG//*+*$:kmP;#[&HJkH[?RoRJQq'm,FC$D*lgsK[1"1;p6D'ME#ZhoD:.(^A;XGW-p=?^_Y'\t(GPKGZ).W&''mt)k@<L<7A[>`m1Pu+cij5*WoejoI*bBlq)7IR!ZD2<ik;ro)TkV3^GKF':[m"..h\eXubUm=A^0fWJFr,V,I^/grOn[=O:ChV4HXR'R!M@&=?[(3+\3,K5`NUTaX8Q2XnGW*/#/fqheaT'BeZH>t58TqV`_^[3g,_XJ=Z?BYq,7g-^45MNM:^V^ZC"a>#*/Zn=g'&M~>endstream
 endobj
 xref
-0 6
+0 21
 0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000224 00000 n 
-0000000305 00000 n 
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000341 00000 n 
+0000000519 00000 n 
+0000000703 00000 n 
+0000000900 00000 n 
+0000000983 00000 n 
+0000001189 00000 n 
+0000001304 00000 n 
+0000001525 00000 n 
+0000001724 00000 n 
+0000001943 00000 n 
+0000002150 00000 n 
+0000002369 00000 n 
+0000002588 00000 n 
+0000002872 00000 n 
+0000002942 00000 n 
+0000003223 00000 n 
+0000003284 00000 n 
 trailer
-<< /Size 6 /Root 1 0 R >>
+<<
+/ID 
+[<b690ccfc42af5e8a4e7a325fd228fe2a><b690ccfc42af5e8a4e7a325fd228fe2a>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 18 0 R
+/Root 17 0 R
+/Size 21
+>>
 startxref
-960
+6128
 %%EOF
