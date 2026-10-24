@@ -13,7 +13,7 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const COLORS = ['#00f0ff', '#9b66ff', '#ff4dd2'];
+  const COLORS = ['#38bdf8', '#3b82f6', '#6366f1'];
   for (let i = 0; i < 70; i++) {
     particles.push({
       x:     Math.random() * window.innerWidth,
@@ -50,7 +50,7 @@
         const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
         if (d < 100) {
           ctx.beginPath();
-          ctx.strokeStyle = '#00f0ff';
+          ctx.strokeStyle = '#38bdf8';
           ctx.globalAlpha = (1 - d / 100) * 0.06;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);

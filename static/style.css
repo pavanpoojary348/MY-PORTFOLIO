@@ -1,22 +1,22 @@
 /* ============================================================
-   PAVAN POOJARY PORTFOLIO - PREMIUM CSS
-   Dark Cyberpunk + Glassmorphism Theme
+   PAVAN POOJARY PORTFOLIO - EXECUTIVE TECH THEME
+   Electric Cobalt & Oceanic Blue Palette
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
 
 :root {
-  --cyan: #00f0ff;
-  --purple: #9b66ff;
-  --pink: #ff4dd2;
-  --dark: #05050a;
-  --darker: #020207;
-  --glass: rgba(255,255,255,0.04);
-  --glass-border: rgba(255,255,255,0.09);
-  --text-primary: #e6eef8;
-  --text-muted: #8bacc8;
-  --gradient: linear-gradient(135deg, var(--cyan), var(--purple), var(--pink));
-  --gradient-soft: linear-gradient(135deg, rgba(0,240,255,0.12), rgba(155,102,255,0.12));
+  --cyan: #38bdf8;
+  --purple: #3b82f6;
+  --pink: #6366f1;
+  --dark: #0b111e;
+  --darker: #060911;
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(56, 189, 248, 0.14);
+  --text-primary: #f1f5f9;
+  --text-muted: #94a3b8;
+  --gradient: linear-gradient(135deg, #38bdf8, #3b82f6, #6366f1);
+  --gradient-soft: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(59, 130, 246, 0.12));
   --radius: 16px;
   --nav-h: 70px;
 }
@@ -143,8 +143,8 @@ h2.section-title span {
   text-decoration: none; cursor: pointer; border: none;
   transition: all 0.3s ease; font-family: 'Outfit', sans-serif;
 }
-.btn-primary { background: var(--gradient); color: var(--dark); box-shadow: 0 4px 20px rgba(0,240,255,0.22); }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,240,255,0.5); }
+.btn-primary { background: var(--gradient); color: #ffffff; font-weight: 600; box-shadow: 0 4px 20px rgba(56,189,248,0.25); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(59,130,246,0.5); }
 .btn-outline { background: transparent; color: var(--cyan); border: 1.5px solid var(--cyan); }
 .btn-outline:hover { background: rgba(0,240,255,0.1); transform: translateY(-3px); box-shadow: 0 0 20px rgba(0,240,255,0.2); }
 .btn-sm { padding: 8px 16px; font-size: 0.82rem; border-radius: 8px; }
@@ -266,12 +266,12 @@ h2.section-title span {
 .form-group input:focus, .form-group textarea:focus { border-color: var(--cyan); box-shadow: 0 0 14px rgba(0,240,255,0.18); background: rgba(0,240,255,0.02); }
 .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(139,172,200,0.4); }
 .btn-submit {
-  width: 100%; padding: 13px; background: var(--gradient); color: var(--dark);
+  width: 100%; padding: 13px; background: var(--gradient); color: #ffffff;
   border: none; border-radius: 10px; font-weight: 700; font-size: 0.93rem;
   font-family: 'Outfit', sans-serif; cursor: pointer; transition: all 0.3s ease;
   display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-.btn-submit:hover { box-shadow: 0 0 30px rgba(0,240,255,0.5); transform: translateY(-2px); }
+.btn-submit:hover { box-shadow: 0 0 30px rgba(56,189,248,0.5); transform: translateY(-2px); }
 
 /* ===== POPUP ===== */
 .popup {
