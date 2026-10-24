@@ -605,6 +605,9 @@ img, svg, video, canvas {
   .hamburger {
     display: flex !important;
   }
+  .cmd-nav-btn {
+    display: none !important;
+  }
   
   /* Mobile Dropdown Nav */
   .nav-links {
@@ -1222,6 +1225,11 @@ img, svg, video, canvas {
 .cmd-nav-btn:hover {
   background: rgba(0, 240, 255, 0.2);
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+@media (max-width: 768px) {
+  .cmd-nav-btn {
+    display: none !important;
+  }
 }
 
 /* ===== TOP SCROLL PROGRESS BAR ===== */
