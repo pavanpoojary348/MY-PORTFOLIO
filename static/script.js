@@ -151,11 +151,29 @@ if (form) {
     }
 
     const data = Object.fromEntries(new FormData(form));
+    // Silent honeypot trap check for automated bot scrapers
+    if (data.website || data.honeypot || data.phone_number) {
+      if (popupMessage) popupMessage.textContent = '✅ Message sent! Pavan will get back to you soon.';
+      if (popup) popup.classList.add('show');
+      setTimeout(() => popup && popup.classList.remove('show'), 4000);
+      form.reset();
+      if (charCounter) charCounter.textContent = '0';
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+      return;
+    }
     try {
       let sent = false;
       if (typeof emailjs !== 'undefined') {
-        try {
-          emailjs.init('7NWrqSOVj2yLaUgWW');
+          if (typeof emailjs.init === 'function') {
+            try {
+              emailjs.init({ publicKey: '7NWrqSOVj2yLaUgWW' });
+            } catch (_) {
+              emailjs.init('7NWrqSOVj2yLaUgWW');
+            }
+          }
           await emailjs.send('service_4jvfl0g', 'template_hbl59ji', {
             name: data.name,
             email: data.email,

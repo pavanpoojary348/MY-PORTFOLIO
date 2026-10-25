@@ -3,6 +3,7 @@ import re
 import time
 import traceback
 import urllib.parse
+from datetime import datetime
 from collections import defaultdict
 from flask import Flask, render_template, request, send_from_directory
 from flask_mail import Mail, Message
@@ -14,6 +15,10 @@ app = Flask(
     static_folder=os.path.join(BASE_DIR, 'static'),
     template_folder=os.path.join(BASE_DIR, 'templates')
 )
+
+@app.context_processor
+def inject_globals():
+    return {'current_year': datetime.now().year}
 
 # ===== SECURITY CONFIGURATION =====
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or os.urandom(32).hex()
@@ -94,6 +99,8 @@ def add_security_headers(response):
         "font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; "
         "img-src 'self' data: https:; "
         "connect-src 'self' https://api.emailjs.com; "
+        "frame-src 'self' blob:; "
+        "object-src 'self' blob:; "
         "frame-ancestors 'self';"
     )
     response.headers['Server'] = 'Web'
@@ -130,9 +137,21 @@ def home():
 def api_index():
     return home()
 
-@app.route('/static/<path:filename>')
-def serve_static(filename):
-    return send_from_directory(os.path.join(BASE_DIR, 'static'), filename)
+@app.route('/favicon.ico')
+def favicon_ico():
+    return send_from_directory(os.path.join(BASE_DIR, 'public'), 'favicon.ico', mimetype='image/x-icon')
+
+@app.route('/favicon.svg')
+def favicon_svg():
+    return send_from_directory(os.path.join(BASE_DIR, 'public'), 'favicon.svg', mimetype='image/svg+xml')
+
+@app.route('/robots.txt')
+def robots_txt():
+    return send_from_directory(os.path.join(BASE_DIR, 'public'), 'robots.txt', mimetype='text/plain')
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    return send_from_directory(os.path.join(BASE_DIR, 'public'), 'sitemap.xml', mimetype='application/xml')
 
 @app.route('/about')
 def about():

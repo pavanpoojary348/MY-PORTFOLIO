@@ -30,14 +30,14 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://api.emailjs.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; frame-ancestors 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://unpkg.com https://api.emailjs.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.emailjs.com; frame-src 'self' blob:; object-src 'self' blob:; frame-ancestors 'self';"
         }
       ]
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!static|public|favicon.ico).*)",
+      "source": "/((?!static|public|favicon\\.ico|favicon\\.svg|robots\\.txt|sitemap\\.xml).*)",
       "destination": "/api/index.py?__vercel_route__=/$1"
     }
   ]
