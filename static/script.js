@@ -100,15 +100,24 @@ if (hamburger && navLinks) {
 // ===== SCROLL REVEAL =====
 const fadeEls = document.querySelectorAll('.fade-up');
 if (fadeEls.length > 0) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08 });
-  fadeEls.forEach(el => observer.observe(el));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px 40px 0px' });
+    fadeEls.forEach(el => observer.observe(el));
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // Safety fallback: ensure no content remains hidden if observer delays or fails
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 1200);
 }
 
 // ===== TYPED.JS INIT =====
@@ -167,6 +176,7 @@ if (form) {
     try {
       let sent = false;
       if (typeof emailjs !== 'undefined') {
+        try {
           if (typeof emailjs.init === 'function') {
             try {
               emailjs.init({ publicKey: '7NWrqSOVj2yLaUgWW' });
